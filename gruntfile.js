@@ -54,7 +54,7 @@ module.exports = function (grunt) {
 copy: {
   main: {
     expand: true,
-    src: 'css/fonts/*',
+    src: ['css/fonts/*','CNAME'],
     dest: 'dist/',
   },
 },
