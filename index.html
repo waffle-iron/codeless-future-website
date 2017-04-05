@@ -7,42 +7,78 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
-    <!-- Bootstrap and Font Awesome css-->
-    <!-- we use cdn but you can also include local files located in css directory
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">-->
-    <script>
-    function loadAsync(url, type, callback) {
-     var s;
-     var r = false;
-     switch (type) {
-      case 'css':
-       s = document.createElement('link');
-       s.rel = 'stylesheet';
-       s.type = 'text/css';
-       s.href = url;
-       break;
-      case 'js':
-       s = document.createElement('script');
-       s.type = 'text/javascript';
-       s.src = url;
-       break;
-     }
-     s.async = true;
-     if (callback && typeof callback === "function") {
-      s.onload = s.onreadystatechange = function () {
-       if (!r && (!this.readyState || this.readyState == 'complete')){
-        r = true;
-        callback();
-       }
-      };
-     }
-     document.getElementsByTagName('head')[0].appendChild(s);
-    }
-    loadAsync('css/bootstrap.min.css', 'css', function(){});
-    loadAsync('css/themify-icons.css', 'css', function(){});
-    loadAsync('css/font-awesome.css', 'css', function(){});
-    </script>
+   
+   <style>* { box-sizing: border-box; }
+html { font-family: sans-serif; text-size-adjust: 100%; font-size: 10px; -webkit-tap-highlight-color: transparent; height: 100%; }
+body { margin: 0px; font-family: "Open Sans", sans-serif; font-size: 14px; line-height: 1.42857; color: rgb(85, 85, 85); background-color: rgb(255, 255, 255); height: 100%; }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
+section { position: relative; padding-top: 80px; padding-bottom: 80px; }
+.intro { position: relative; width: 100%; height: 100%; min-height: 600px; text-align: center; color: rgb(255, 255, 255); }
+.intro.image-background { background: url("../img/startup-room.jpg") center center / cover no-repeat; backface-visibility: hidden; }
+.intro.image-background .overlay { display: block; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background: rgb(80, 145, 218); opacity: 0.93; z-index: 2; }
+.intro .content { position: relative; width: 100%; top: 50%; transform: translate(0px, -50%); z-index: 3; }
+.container { padding-right: 15px; padding-left: 15px; margin-right: auto; margin-left: auto; }
+.row { margin-right: -15px; margin-left: -15px; }
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 { position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; }
+p { margin: 0px 0px 20px; }
+.roboto { font-family: "Roboto Condensed", sans-serif; text-transform: uppercase; letter-spacing: 0.08em; }
+.intro p { font-size: 18px; }
+h1 { margin: 0.67em 0px; font-size: 2em; }
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 { font-family: "Roboto Condensed", sans-serif; font-weight: 300; line-height: 1.3; color: rgb(51, 51, 51); text-transform: uppercase; letter-spacing: 0.08em; }
+.h1, .h2, .h3, h1, h2, h3 { margin-top: 0px; margin-bottom: 20px; }
+.h1, h1 { font-size: 56px; }
+.intro h1, .intro h2, .intro h3 { color: rgb(255, 255, 255); }
+.intro h1 { font-size: 42px; margin-top: 60px; margin-bottom: 60px; }
+a { background-color: transparent; color: rgb(80, 145, 218); text-decoration: none; }
+.intro a { color: rgb(255, 255, 255); }
+.intro .icon { position: absolute; bottom: 40px; left: 50%; margin-left: -20px; width: 40px; height: 40px; line-height: 40px; border: 2px solid rgb(255, 255, 255); border-radius: 20px; z-index: 3; color: rgb(255, 255, 255); }
+.fa { display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; line-height: 1; font-family: FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; }
+header { z-index: 1000; }
+.header { width: 100%; }
+.navbar { position: relative; min-height: 50px; margin-bottom: 30px; border: 1px solid transparent; font-family: "Open Sans", sans-serif; border-bottom: 1px solid transparent; }
+.navbar-default { background-color: rgb(255, 255, 255); border-color: rgb(231, 231, 231); border-bottom-color: rgb(230, 230, 230); }
+.navbar-header { position: relative; z-index: 1004; }
+.container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header { margin-right: -15px; margin-left: -15px; }
+button, input, optgroup, select, textarea { margin: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; color: inherit; }
+button { overflow: visible; }
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+button, input, select, textarea { font-family: inherit; font-size: inherit; line-height: inherit; }
+.navbar-toggle { position: relative; float: right; padding: 9px 10px !important; margin-top: 8px; margin-right: 15px; margin-bottom: 8px; background-color: transparent; background-image: none; border: 1px solid transparent; border-radius: 0px; }
+.navbar-default .navbar-toggle { border-color: transparent; }
+.navbar-toggle .icon-bar { display: block; width: 22px; height: 2px; border-radius: 1px; }
+.navbar-default .navbar-toggle .icon-bar { background-color: rgb(136, 136, 136); }
+.navbar-toggle .icon-bar + .icon-bar { margin-top: 4px; }
+.navbar-brand { float: left; height: 50px; padding: 0px 15px; font-size: 18px; line-height: 20px; }
+.navbar-default .navbar-brand { color: rgb(85, 85, 85); }
+img { border: 0px; vertical-align: middle; }
+.navbar-brand > img { display: block; }
+.collapse { display: none; visibility: hidden; }
+.navbar-collapse { padding-right: 15px; padding-left: 15px; overflow-x: visible; border-top: 1px solid transparent; box-shadow: rgba(255, 255, 255, 0.0980392) 0px 1px 0px inset; position: relative; z-index: 1003; text-transform: uppercase; letter-spacing: 0.08em; font-family: "Roboto Condensed", sans-serif; font-weight: 700; font-size: 14px; background: rgb(255, 255, 255); max-height: 340px; }
+.navbar-default .navbar-collapse, .navbar-default .navbar-form { border-color: rgb(231, 231, 231); }
+.navbar-default .navbar-collapse { border-color: rgb(230, 230, 230); }
+ol, ul { margin-top: 0px; margin-bottom: 10px; }
+.nav { padding-left: 0px; margin-bottom: 0px; list-style: none; }
+.navbar-nav { margin: 7.5px -15px; }
+.nav > li { position: relative; display: block; }
+.navbar-collapse a { transition: all 0.2s ease-out; }
+.nav > li > a { position: relative; display: block; padding: 10px 15px; }
+.navbar-nav > li > a { padding-top: 10px; padding-bottom: 10px; line-height: 20px; }
+.navbar-default .navbar-nav > li > a { color: rgb(85, 85, 85); }
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover { color: rgb(80, 145, 218); background-color: transparent; }
+.margin-bottom { margin-bottom: 30px; }
+.h2, h2 { font-size: 42px; }
+.heading { text-align: center; margin-bottom: 40px; }
+.lead { margin-bottom: 20px; font-size: 16px; font-weight: 300; line-height: 1.4; }
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img { display: block; max-width: 100%; height: auto; }
+.img-responsive { margin: 0px auto; }
+.h4, .h5, .h6, h4, h5, h6 { margin-top: 10px; margin-bottom: 10px; }
+.h5, h5 { font-size: 14px; font-weight: 700; }
+.gm-style img { max-width: none; }
+.gm-style .gm-style-cc span, .gm-style .gm-style-cc a, .gm-style .gm-style-mtc div { font-size: 10px; }
+.gm-style .gmnoscreen, .gmnoscreen { display: none; }
+hr { height: 0px; box-sizing: content-box; margin-top: 20px; margin-bottom: 20px; border-width: 1px 0px 0px; border-right-style: initial; border-bottom-style: initial; border-left-style: initial; border-right-color: initial; border-bottom-color: initial; border-left-color: initial; border-image: initial; border-top-style: solid; border-top-color: rgb(238, 238, 238); }
+</style>
     <!-- Google fonts - Roboto Condensed for headings, Open Sans for copy-->
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300,700%7COpen+Sans:300,400,700">
     <!-- theme stylesheet-->
@@ -332,6 +368,10 @@ consideriamo più importanti le voci a sinistra. </p>
         </div>
       </div>
     </footer>
+     <!-- Bootstrap and Font Awesome css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/css/themify-icons.css">
     <!-- Javascript files-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
